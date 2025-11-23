@@ -19,6 +19,8 @@ else:
     for i, ch in enumerate(user_input):
         # If this character is any of the single-character operators
         if ch in ["+", "-", "*", "/"]:
+            if ch == "-" and (i == 0 or user_input[i-1] in ["+", "-", "*", "/"]):
+                continue
             operator = ch # store the operator
             index = i # store its position
             break
